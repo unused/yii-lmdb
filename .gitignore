@@ -1,3 +1,8 @@
 protected/runtime/
 assets/
-protected/config/*.php
+protected/config/main.php
+protected/config/console.php
+protected/vendor/yii/*
+images/uploads/*
+librarydiff
+protected/runtime/*
