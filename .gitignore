@@ -1,0 +1,3 @@
+protected/runtime/
+assets/
+protected/config/*.php
