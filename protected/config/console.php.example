@@ -1,0 +1,20 @@
+<?php
+
+// This is the configuration for yiic console application.
+// Any writable CConsoleApplication properties can be configured here.
+return array(
+	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
+	'name'=>'LMDB Console Application',
+
+  'components'=>array(
+    'db'=>array(
+      'connectionString' => 'mysql:host=localhost;dbname=yii_moviedb',
+      'emulatePrepare' => true,
+      'username' => 'username',
+      'password' => 'password',
+      'charset' => 'utf8',
+      'enableProfiling'=>false,
+      'enableParamLogging'=>false,
+    ),
+  ),
+);

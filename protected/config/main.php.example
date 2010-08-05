@@ -1,0 +1,62 @@
+<?php
+
+return CMap::mergeArray(
+  require(dirname(__FILE__).'/routing.php'),
+  array(
+	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
+	'name'=>'LMDB',
+
+	// preloading 'log' component
+	'preload'=>array('log'),
+
+	// autoloading
+	'import'=>array(
+		'application.models.*',
+		'application.components.*',
+    'application.controllers.*',
+	),
+
+	// application components
+	'components'=>array(
+		'user'=>array(
+			'allowAutoLogin'=>true,
+      'loginUrl'=>array('site/login'),
+		),
+
+		'db'=>array(
+			'connectionString' => 'mysql:host=localhost;dbname=yii_moviedb',
+			'emulatePrepare' => true,
+			'username' => 'user',
+			'password' => 'password',
+			'charset' => 'utf8',
+      'enableProfiling'=>true,
+      'enableParamLogging'=>true,
+		),
+		'errorHandler'=>array('errorAction'=>'site/error'),
+		'log'=>array(
+			'class'=>'CLogRouter',
+			'routes'=>array(
+				array(
+					'class'=>'CWebLogRoute',
+					'categories'=>'system.db.CDbCommand',
+          'showInFireBug'=>true,
+				),
+			),
+		),
+	),
+
+	// application-level parameters that can be accessed
+	// using Yii::app()->params['paramName']
+	'params'=>array(
+		// this is used in contact page
+		'adminEmail'=>'admin@example.com',
+    'twitter'=>array(
+      'api'=>'http://twitter.com/statuses/update.xml',
+      'user'=>'user',
+      'password'=>'password',
+    ),
+    'tmdb'=>array(
+      'key'=>'tmdb-api-key',
+    ),
+	),
+);
