@@ -6,3 +6,4 @@ protected/vendor/yii/*
 images/uploads/*
 librarydiff
 protected/runtime/*
+protected/tests/cucumber/webrat.log
