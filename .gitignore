@@ -1,5 +1,6 @@
 protected/runtime/
 assets/
+!assets/.gittouch
 protected/config/main.php
 protected/config/console.php
 protected/vendor/yii/*
