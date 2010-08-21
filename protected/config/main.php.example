@@ -59,4 +59,4 @@ return CMap::mergeArray(
       'key'=>'tmdb-api-key',
     ),
 	),
-);
+));
