@@ -14,19 +14,25 @@ Installation
 
     $ mkdir protected/vendor
     $ cd protected/vendor
-    $ wget http://www.yiiframework.com/files/yii-1.1.3.tar.gz
-    $ tar xzf yii-1.1.3.tar.gz
-    $ rm yii-1.1.3.tar.gz
-    $ mv yii-1.1.3.r2247 yii
+    $ http://yii.googlecode.com/files/yii-1.1.5.r2654.tar.gz
+    $ tar xzf yii-1.1.5.r2654.tar.gz
+    $ rm yii-1.1.5.r2654.tar.gz
+    $ mv yii{-1.1.5.r2654,}
 
 
 ### Create database
 
+    # database setup
     $ mysqladmin -uroot create lmdb
     $ cd protected/data
-    $ mysql -uroot lmdb < schema.mysql.sql 
-    # works on zsh
-    $ mysql -uroot lmdb < [0-9]*.sql 
+    $ mysql -uroot lmdb < schema.mysql.sql
+
+    # perform migrations
+    #   works on zsh
+    $ mysql -uroot lmdb < [0-9]*.sql
+    #   works on bash
+    $ cat [0-9]*.sql | mysql -uroot lmdb
+
     # add admin user
     $ mysql -uroot ldmb < add-admin-user.sql
 
@@ -40,4 +46,4 @@ Edit the DB configuration in both files.
 Set write permissions to `/assets` and `/images/upload`.
 
 
-Login with admin/admin.
+Login with admin/admin
