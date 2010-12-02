@@ -62,7 +62,6 @@
           array('label'=>'Wishlist', 'url'=>array('/movie/wishlist')),
           array('label'=>'User',  'url'=>array('/users')),
           array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout')),
-          array('label'=>'Features','url'=>array('/feature/admin'),'visible'=>Yii::app()->user->id==1),
           ),
         )); ?>
     </div><!-- mainmenu -->
